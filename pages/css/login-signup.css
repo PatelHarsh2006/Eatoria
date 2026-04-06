@@ -1,0 +1,13 @@
+.body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100vw;
+    font-family: Arial, sans-serif;
+}
+
+.login-signup-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
