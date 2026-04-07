@@ -141,7 +141,7 @@
 // Items for each Pages :
 
 async function loadProducts() {
-       const response = await fetch('../items.json');
+       const response = await fetch('/trial.json');
        const data = await response.json();
 
        const category = document.body.getAttribute("data-category");
@@ -162,34 +162,66 @@ async function loadProducts() {
          bottom.classList.add("item-card-bottom");
          bottom.innerHTML = `
            <div class="item-name">${item.title}</div>
-           <div class="item-description">${item.desc}</div>
-           <div class="item-price">${item.price} <div class="mrp-sale-wrapper"><div class="item-MRP">${item.priceCut}</div><div class="item-sale">${item.sale}</div></div></div>
+           <div class="item-restaurant">${item.restaurant}</div>
+           <div class="time-rating"><div class="item-rating">${item.rating}</div>•<div class="item-time">${item.time}</div></div>
          `
 
-         const buttons = document.createElement("div");
-         buttons.classList.add("item-buttons");
+         const pricecart = document.createElement("div");
+         pricecart.classList.add("price-cart");
 
-         const buy = document.createElement("div");
-         buy.classList.add("buy-button");
-         buy.textContent = "Buy";
+         const price = document.createElement("div");
+         price.classList.add("item-price");
+         price.textContent = item.price;
 
-         const wishlist = document.createElement("div");
-         wishlist.classList.add("wishlist-button");
-         wishlist.textContent = "Save";
+         const add_cart = document.createElement("div");
+         add_cart.classList.add("add_cart-btn");
+         add_cart.textContent = "Add";
 
-         const iconCircle = document.createElement("div");
-         iconCircle.classList.add("nav-icons-circle");
-         const icon = document.createElement("i");
-         icon.classList.add("fas" , "fa-heart");
-         
-         iconCircle.appendChild(icon);
-         wishlist.appendChild(iconCircle);
-         buttons.appendChild(buy);
-         buttons.appendChild(wishlist);
+         let quantity = 0;
+
+         add_cart.addEventListener("click", ()=>{
+              if(quantity === 0){
+                quantity = 1;
+                renderCounter();
+              }
+         });
+
+         function renderCounter(){
+              add_cart.innerHTML = `
+              <button class="minus">-</button>
+              <span class="qty">${quantity}</span>
+              <button class="plus">+</button>
+              `;
+
+         const minus = add_cart.querySelector(".minus");
+         const plus = add_cart.querySelector(".plus");
+         const qty = add_cart.querySelector(".qty");
+
+         minus.addEventListener("click", (e)=>{
+          e.stopPropagation();
+          quantity--;
+          if(quantity <= 0){
+            quantity = 0;
+            add_cart.textContent = "Add";
+          }
+          else{
+            qty.textContent = quantity;
+          }
+         });
+
+         plus.addEventListener("click", (e)=>{
+                 e.stopPropagation();
+                 quantity++;
+                 qty.textContent = quantity;
+         });
+        }
+
+         pricecart.appendChild(price);
+         pricecart.appendChild(add_cart);
 
          card.appendChild(top);
          card.appendChild(bottom);
-         card.appendChild(buttons);
+          card.appendChild(pricecart);
          container.appendChild(card);
        });
 }
