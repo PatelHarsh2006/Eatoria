@@ -211,6 +211,7 @@ async function loadProducts() {
 
          plus.addEventListener("click", (e)=>{
                  e.stopPropagation();
+                 if(quantity <= 9)
                  quantity++;
                  qty.textContent = quantity;
          });
