@@ -53,7 +53,7 @@ function login(){
       <i class="fas fa-search"></i>
     </div>
     <div class="nav-icons">
-      <div class="account-section" onclick="toggleAccountBox()">
+      <div class="account-section">
       <div class="nav-icons-circle"><i class="fas fa-user"></i></div>
       <span id="accountName"></span>
       <span class="arrow">▾</span>
@@ -68,11 +68,15 @@ function login(){
       <i class="fas fa-search"></i>
     </div>`;
 
+
   let username = localStorage.getItem("login-name");
   let accountname = document.getElementById("accountName");
   let accbox = document.getElementById("accountBox");
+  
 
-  if(username){
+ function syncUser(){
+   username = localStorage.getItem("login-name");
+   if(username){
       let formattedName = username.charAt(0).toUpperCase() + username.slice(1);
       accountname.textContent = formattedName;
       accbox.innerHTML = `
@@ -81,7 +85,7 @@ function login(){
               <li>Order History</li>
               <li id="logout">Logout</li>
               </ul>
-          `
+          `;
     }
   else{
       accountname.textContent = "Login";
@@ -90,8 +94,10 @@ function login(){
               <li>Login</li>
               <li>Signup</li>
               </ul>
-          `
+          `;
     }
+  }
+  syncUser();
   
 let accsec = document.querySelector(".account-section");
 accsec.addEventListener("click", function(e){
@@ -100,7 +106,15 @@ accsec.addEventListener("click", function(e){
 });
 
 accbox.addEventListener("click", function(e){
-  e.stopPropagation();
+   e.stopPropagation();
+
+    if(e.target.id === "logout"){
+        const confirmed = confirm("Are you sure you want to logout?");
+        if(confirmed){
+            localStorage.removeItem("login-name");
+            syncUser();
+        }
+    }
 });
 
 document.addEventListener("click", function(e){
