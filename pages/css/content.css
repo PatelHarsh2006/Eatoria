@@ -25,6 +25,7 @@
 }
 .content-desc p{
     margin-top: 0;
+    color: rgb(38, 38, 38);
 }
 .content-items{
     display: grid;
@@ -40,10 +41,12 @@
     padding: 20px;
     transition: 0.15s ease;
     border-radius: 10px;
+    scale: 1;
 }
 
 .item-card:hover{
-    box-shadow: 2px 1px 20px 0px rgba(0, 0, 0, 0.064);
+    /* box-shadow: 2px 1px 20px 0px rgba(0, 0, 0, 0.064); */
+    scale: 0.97;
 }
 
 .item-card-top img{
@@ -99,19 +102,21 @@
 .add_cart-btn{
     position : relative;
     left: 100px;
-    background-color: rgb(255, 123, 0);
+    background-color: rgb(255, 133, 19);
     cursor: pointer;
     padding: 5px;
     border-radius: 20px;
     width: 80px;
+    color: white;
     text-align: center;
 }
 
 .minus, .plus{
     background-color: transparent;
     border: none;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 700;
+    color: white;
 }
 
 
