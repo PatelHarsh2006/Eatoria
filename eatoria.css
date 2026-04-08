@@ -265,12 +265,13 @@ body {
   margin: 0 auto;
   width: 90vh;
   height: 90vh;
+  margin-left: 12vw;
 }
 
 .hero-text{
   display: flex;
   flex-direction: column;
-  margin: 160px 0 0 -50px;
+  margin: 160px 0 0 30px;
 }
 
 .hero-text h1, .hero-text h2{
