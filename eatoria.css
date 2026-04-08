@@ -458,7 +458,7 @@ body {
     padding: 60px 80px;
     display: flex;
     flex-direction: row;
-    gap : 240px;
+    gap : 100px;
     align-items: flex-start;
     z-index: 2;
 }
@@ -816,7 +816,7 @@ body {
     font-size: 9px;
   }
   .footer-titles {
-    font-size: 12px;
+    font-size: 14px;
     padding-bottom: 10px;
     padding-top: 5.5px;
   }
