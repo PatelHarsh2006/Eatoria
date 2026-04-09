@@ -1169,7 +1169,7 @@
     {
       "id": "vada6",
       "image": "Items/vada/6.avif",
-      "title": "Vada Pav",
+      "title": "Sambhar vada",
       "restaurant": "Mumbai Street Food",
       "desc": "Batata vada inside pav.\nServed with chutneys.\nIconic Mumbai dish.\nQuick snack.",
       "price": "₹60",
@@ -1181,7 +1181,7 @@
       "image": "Items/vada/7.avif",
       "title": "Cheese Vada Pav",
       "restaurant": "Mumbai Street Food",
-      "desc": "Vada pav with cheese.\nCreamy and spicy combo.\nRich and tasty.\nFusion street food.",
+      "desc": "Vada sambhar.\nCreamy and spicy combo.\nRich and tasty.\nFusion street food.",
       "price": "₹90",
       "time": "10-15 min",
       "rating": "⭐ 4.5"
@@ -1199,7 +1199,7 @@
     {
       "id": "vada9",
       "image": "Items/vada/9.avif",
-      "title": "Butter Vada Pav",
+      "title": "Sambhar Chatni Vada",
       "restaurant": "Mumbai Street Food",
       "desc": "Vada pav toasted in butter.\nRich and crispy taste.\nSoft inside and crunchy outside.\nDelicious snack.",
       "price": "₹80",
@@ -1295,8 +1295,8 @@
   "beverages": [
     {
       "id": "bev1",
-      "image": "Items/beverages/1.jpg",
-      "title": "Cold Coffee",
+      "image": "Items/beverages/1.avif",
+      "title": "Cold Coke",
       "restaurant": "Cafe Coffee Day",
       "desc": "Chilled coffee blended with milk.\nSmooth and refreshing drink.\nPerfect caffeine boost.\nLoved by coffee lovers.",
       "price": "₹120",
@@ -1305,8 +1305,8 @@
     },
     {
       "id": "bev2",
-      "image": "Items/beverages/2.jpg",
-      "title": "Cappuccino",
+      "image": "Items/beverages/2.avif",
+      "title": "Zero Suger Coke",
       "restaurant": "Cafe Coffee Day",
       "desc": "Hot coffee with milk foam.\nRich aroma and smooth taste.\nPerfect morning drink.\nClassic coffee option.",
       "price": "₹140",
@@ -1315,8 +1315,8 @@
     },
     {
       "id": "bev3",
-      "image": "Items/beverages/3.jpg",
-      "title": "Masala Chai",
+      "image": "Items/beverages/3.avif",
+      "title": "Pepsi",
       "restaurant": "Chai Sutta Bar",
       "desc": "Traditional Indian spiced tea.\nStrong and aromatic flavor.\nServed hot and fresh.\nPerfect for tea lovers.",
       "price": "₹40",
@@ -1325,8 +1325,8 @@
     },
     {
       "id": "bev4",
-      "image": "Items/beverages/4.jpg",
-      "title": "Green Tea",
+      "image": "Items/beverages/4.avif",
+      "title": "Thumbs Up",
       "restaurant": "Chai Sutta Bar",
       "desc": "Healthy and light tea option.\nRich in antioxidants.\nRefreshing and calming.\nGood for fitness lovers.",
       "price": "₹60",
@@ -1335,8 +1335,8 @@
     },
     {
       "id": "bev5",
-      "image": "Items/beverages/5.jpg",
-      "title": "Lemon Iced Tea",
+      "image": "Items/beverages/5.avif",
+      "title": "Red Bull",
       "restaurant": "Cafe Coffee Day",
       "desc": "Chilled tea with lemon flavor.\nRefreshing and tangy taste.\nPerfect summer drink.\nLight and cool beverage.",
       "price": "₹110",
@@ -1345,7 +1345,7 @@
     },
     {
       "id": "bev6",
-      "image": "Items/beverages/6.jpg",
+      "image": "Items/beverages/6.avif",
       "title": "Fresh Lime Soda",
       "restaurant": "Juice Junction",
       "desc": "Refreshing soda with lime.\nSweet and salty options.\nPerfect thirst quencher.\nLight and fizzy drink.",
@@ -1355,8 +1355,8 @@
     },
     {
       "id": "bev7",
-      "image": "Items/beverages/7.jpg",
-      "title": "Orange Juice",
+      "image": "Items/beverages/7.avif",
+      "title": "Black Coffee",
       "restaurant": "Juice Junction",
       "desc": "Freshly squeezed orange juice.\nRich in vitamin C.\nHealthy and refreshing.\nNatural fruit drink.",
       "price": "₹90",
@@ -1365,7 +1365,7 @@
     },
     {
       "id": "bev8",
-      "image": "Items/beverages/8.jpg",
+      "image": "Items/beverages/8.avif",
       "title": "Mojito",
       "restaurant": "Barista",
       "desc": "Mint and lemon flavored drink.\nCool and refreshing taste.\nServed chilled with ice.\nPerfect summer beverage.",
@@ -1375,14 +1375,64 @@
     },
     {
       "id": "bev9",
-      "image": "Items/beverages/9.jpg",
-      "title": "Hot Chocolate",
+      "image": "Items/beverages/9.avif",
+      "title": "Hot Cocoa",
       "restaurant": "Starbucks",
       "desc": "Warm chocolate drink.\nRich and creamy texture.\nPerfect winter beverage.\nLoved by chocolate fans.",
       "price": "₹160",
       "distance": "3-5 km",
       "rating": "4.7 ⭐"
+
+
+      
     }
+
+  ],
+    "offers": [
+    {
+      "id": "offer1",
+      "image": "Items/offers/1.png",
+      "title": "Flovour Fun Box Of 4",
+      "desc": "Get flat 50% discount on your first order.\nApplicable on all restaurants.\nMaximum discount up to ₹100.\nValid for new users only.",
+      "date": "1 June"
+    },
+    {
+      "id": "offer2",
+      "image": "Items/offers/2.png",
+      "title": "Buy 1 Get 3 Free ",
+      "desc": "Order any medium pizza and get one free.\nAvailable on selected outlets.\nLimited time offer.\nPerfect for sharing.",
+      "date": "5 June"
+    },
+    {
+      "id": "offer3",
+      "image": "Items/offers/3.jpg",
+      "title": "₹100 OFF on Orders Above ₹400",
+      "desc": "Flat ₹100 discount on orders above ₹400.\nApplicable on all food categories.\nUse code SAVE100.\nLimited period deal.",
+      "date": "10 June"
+    },
+    {
+      "id": "offer4",
+      "image": "Items/offers/4.jpg",
+      "title": "Flat ₹125 OFF on Minimum Order of ₹500",
+      "desc": "Order combo meals and save ₹125.\nPerfect for group orders.\nApplies on selected combos.\nGreat value deal.",
+      "date": "15 June"
+    },
+    {
+      "id": "offer5",
+      "image": "Items/offers/5.jpg",
+      "title": "Mealts Meal For 2",
+      "desc": "Get 20% discount on all meals.\nApplicable on selected restaurants.\nSweet deals for dessert lovers.\nLimited time only.",
+      "date": "18 June"
+    },
+    {
+      "id": "offer6",
+      "image": "Items/offers/6.jpg",
+      "title": "Stuff Meal For 2",
+      "desc": "Order combo meals and save ₹125.\nPerfect for group orders.\nApplies on selected combos.\nGreat value deal.",
+      "date": "20 June"
+    }
+
   ]
+
 }
 
