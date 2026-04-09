@@ -1,3 +1,11 @@
+function getCart(){
+  return JSON.parse(localStorage.getItem("cart")) || [];
+}
+function saveCart(cart){
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+
 function signup(){
    let name = document.getElementById("s-name").value;
    let email = document.getElementById("s-email").value;
@@ -49,6 +57,7 @@ signupForm.addEventListener("submit", function(e){
 
 //Navbar : 
   let basePath = location.pathname.includes("/pages/") ? "../" : "";
+  let basePath2 = location.pathname.includes("/pages/") ? "" : "pages/";
   let nav = document.getElementsByClassName("nav-mobile")[0];
 
   nav.innerHTML = `<div class="navbar">
@@ -64,7 +73,7 @@ signupForm.addEventListener("submit", function(e){
         <a href="${basePath}index.html"><div class="menu-item">Home</div></a>
         <a href=""><div class="menu-item">Offers</div></a>
         <a href=""><div class="menu-item">Restaurants</div></a>
-        <a href="order.html"><div class="menu-item">Orders</div></a>
+        <a href="orders.html"><div class="menu-item">Orders</div></a>
     </div>
     <div class="search-bar">
       <input type="search" placeholder="Search your favourite dish">
@@ -78,7 +87,7 @@ signupForm.addEventListener("submit", function(e){
       <div class="account-box" id="accountBox"></div>
 
       </div> 
-      <div><div class="nav-icons-circle"><i class="fas fa-shopping-cart"></i></div></div>
+      <div><a href="${basePath2}orders.html"><div class="nav-icons-circle"><i class="fas fa-shopping-cart"></i></div></a></div>
     </div>
   </div>
    <div class="search-bar-mobile">
@@ -170,6 +179,7 @@ async function loadProducts() {
        const items = data[category];
 
        const container = document.getElementsByClassName("content-items")[0];
+       if (!container) return; 
        container.innerHTML = "";
 
        items.forEach(item =>{
@@ -199,21 +209,46 @@ async function loadProducts() {
          add_cart.classList.add("add_cart-btn");
          add_cart.textContent = "Add";
 
-         let quantity = 0;
+
+         let cart = getCart();
+         let existingItem = cart.find(c => c.id === item.id);
+         let quantity = existingItem ? existingItem.quantity : 0;
+
+         if(quantity > 0){
+           renderCounter();
+         }
 
          add_cart.addEventListener("click", ()=>{
               if(quantity === 0){
                 quantity = 1;
+                updateCart();
                 renderCounter();
               }
          });
+         
+         function updateCart(){
+          let cart = getCart();
+          let existingItem = cart.find(c => c.id === item.id);
+
+          if(existingItem){
+            existingItem.quantity = quantity;
+          }
+          else{
+            cart.push({...item, quantity});
+          }
+
+          cart = cart.filter(c => c.quantity > 0);
+          saveCart(cart);
+          }
 
          function renderCounter(){
-              add_cart.innerHTML = `
-              <button class="minus">-</button>
-              <span class="qty">${quantity}</span>
-              <button class="plus">+</button>
-              `;
+          
+
+          add_cart.innerHTML = `
+          <button class="minus">-</button>
+          <span class="qty">${quantity}</span>
+          <button class="plus">+</button>
+          `;
 
          const minus = add_cart.querySelector(".minus");
          const plus = add_cart.querySelector(".plus");
@@ -229,6 +264,7 @@ async function loadProducts() {
           else{
             qty.textContent = quantity;
           }
+          updateCart();
          });
 
          plus.addEventListener("click", (e)=>{
@@ -236,6 +272,7 @@ async function loadProducts() {
                  if(quantity <= 9)
                  quantity++;
                  qty.textContent = quantity;
+                 updateCart();
          });
         }
 
@@ -256,102 +293,80 @@ loadProducts();
 
 
 
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const slider = document.getElementById('offer-banners');
+const dotsContainer = document.getElementById('dots');
 
+function updateSlider(){
+  slider.style.transform = `translateX(-${currentSlide * 100}%)` ;
+  updateDots();
+}
 
+function nextSlide(){
+  if (currentSlide < slides.length - 1) {
+     currentSlide++;
+  }
+  else{
+    currentSlide = 0;
+  }
+  updateSlider();
+}
 
+function prevSlide(){
+  if (currentSlide > 0) {
+    currentSlide--;
+  }
+  else{
+    currentSlide = slides.length - 1;
+  }
+  updateSlider();
+}
 
+function createDots(){
+  slides.forEach((_, index) =>{
+    const dot = document.createElement('button');
+    dot.addEventListener('click', () => {
+      currentSlide = index;
+      updateSlider();
+    });
+     dotsContainer.appendChild(dot);
+  });
+}
 
+function updateDots(){
+  const dots = dotsContainer.querySelectorAll('button');
+  dots.forEach((dot,index) => {
+    dot.classList.toggle('active', index==currentSlide);
+  });
+}
 
+createDots();
+updateSlider();
 
-// function toggleAccountBox() {
-//   const box = document.getElementById("accountBox");
-//   box.style.display = box.style.display === "block" ? "none" : "block";
-// }
+const openBtn = document.getElementById('openNav');
+const closeBtn = document.getElementById('closeNav');
+const sideNavbar = document.getElementById('sideNavbar');
+const overlay = document.getElementById('overlay');
 
-// window.addEventListener("click", function (e) {
-//   const box = document.getElementById("accountBox");
-//   const accBtn = document.querySelector(".account-section");
+openBtn.addEventListener('click', ()=> {
+     sideNavbar.classList.add('open') ;
+     overlay.classList.add('show') ;
 
-//   if (!accBtn.contains(e.target) && !box.contains(e.target)) {
-//     box.style.display = "none";
-//   }
-// });
+});
 
+closeBtn.addEventListener('click', ()=>{
+     sideNavbar.classList.remove('open');
+     overlay.classList.remove('show');
+});
 
-// let currentSlide = 0;
-// const slides = document.querySelectorAll('.slide');
-// const slider = document.getElementById('offer-banners');
-// const dotsContainer = document.getElementById('dots');
-
-// function updateSlider(){
-//   slider.style.transform = `translateX(-${currentSlide * 100}%)` ;
-//   updateDots();
-// }
-
-// function nextSlide(){
-//   if (currentSlide < slides.length - 1) {
-//      currentSlide++;
-//   }
-//   else{
-//     currentSlide = 0;
-//   }
-//   updateSlider();
-// }
-
-// function prevSlide(){
-//   if (currentSlide > 0) {
-//     currentSlide--;
-//   }
-//   else{
-//     currentSlide = slides.length - 1;
-//   }
-//   updateSlider();
-// }
-
-// function createDots(){
-//   slides.forEach((_, index) =>{
-//     const dot = document.createElement('button');
-//     dot.addEventListener('click', () => {
-//       currentSlide = index;
-//       updateSlider();
-//     });
-//      dotsContainer.appendChild(dot);
-//   });
-// }
-
-// function updateDots(){
-//   const dots = dotsContainer.querySelectorAll('button');
-//   dots.forEach((dot,index) => {
-//     dot.classList.toggle('active', index==currentSlide);
-//   });
-// }
-
-// createDots();
-// updateSlider();
-
-// const openBtn = document.getElementById('openNav');
-// const closeBtn = document.getElementById('closeNav');
-// const sideNavbar = document.getElementById('sideNavbar');
-// const overlay = document.getElementById('overlay');
-
-// openBtn.addEventListener('click', ()=> {
-//      sideNavbar.classList.add('open') ;
-//      overlay.classList.add('show') ;
-
-// });
-
-// closeBtn.addEventListener('click', ()=>{
-//      sideNavbar.classList.remove('open');
-//      overlay.classList.remove('show');
-// });
-
-// document.addEventListener('click' , (e)=> {
-//    if (
-//     sideNavbar.classList.contains('open') &&
-//     !sideNavbar.contains(e.target) &&
-//     !openBtn.contains(e.target)
-//    ){
-//     sideNavbar.classList.remove('open');
-//     overlay.classList.remove('show');
-//    }
-// });
+document.addEventListener('click' , (e)=> {
+   if (
+    sideNavbar.classList.contains('open') &&
+    !sideNavbar.contains(e.target) &&
+    !openBtn.contains(e.target)
+   ){
+    sideNavbar.classList.remove('open');
+    overlay.classList.remove('show');
+   }
+});

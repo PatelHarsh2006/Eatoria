@@ -559,6 +559,9 @@ body {
   margin-top: 5px;
 
 }
+div a{
+  text-decoration: none;
+}
 .connect div{
   margin-top: 0px;
 }
