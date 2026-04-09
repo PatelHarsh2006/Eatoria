@@ -83,6 +83,107 @@
 
     <div class="dots" id="dots"></div>
  </div>
+ <!-- App Download Section -->
+<div class="app-download-section">
+
+  <div class="app-download-card">
+
+    <!-- Left Content -->
+    <div class="app-text">
+      <h2>Order Faster with Eatoria App</h2>
+      <p>
+      </p>
+
+      <div class="store-buttons">
+
+      </div>
+    </div>
+
+    <!-- Right Image -->
+    <div class="app-image">
+      <img src="img/app2.png" alt="App Preview">
+    </div>
+
+  </div>
+</div>
+
+<style>
+.app-download-section{
+  width:100%;
+  padding:60px 60px;
+  display:flex;
+  justify-content:center;
+  background:#f9f9f9;
+}
+
+.app-download-card{
+  width:90%;
+  max-width:1800px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:white;
+  border-radius:20px;
+  padding:30px 40px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+  opacity:0;
+  transform:translateY(80px) scale(0.95);
+  animation:popIn 1s ease forwards;
+  animation-delay:0.3s;
+}
+
+@keyframes popIn{
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+.app-text h2{
+  font-size:32px;
+  margin-bottom:10px;
+}
+
+.app-text p{
+  color:#666;
+  line-height:1.6;
+}
+
+.store-buttons img{
+  height:40px;
+  margin-right:10px;
+  margin-top:15px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.store-buttons img:hover{
+  transform:scale(1.05);
+}
+
+.app-image img{
+  height:300px;
+  animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .app-download-card{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .app-image img{
+    margin-top:20px;
+  }
+}
+</style>
 
 
   <div class="footer-block">
