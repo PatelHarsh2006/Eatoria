@@ -465,11 +465,31 @@
   ],
 
   "dessert": [
-    {
-      "id": "dessert1",
+    
+      {
+        "id": "dessert8",
+        "image": "Items/dessert/8.avif",
+        "title": "Gulab Jamun",
+        "restaurant": "Sweetwala",
+        "desc": "Traditional frozen dessert.\nDense and creamy texture.\nRich Indian flavors.\nPerfect summer treat.",
+        "price": "₹100",
+        "time": "10-15 min",
+        "rating": "⭐ 4.5"
+      },
+      {
+        "id": "dessert9",
+        "image": "Items/dessert/9.avif",
+        "title": "Jalebi",
+        "restaurant": "Gujarat Dishes",
+        "desc": "Sweet dessert drink.\nContains vermicelli and syrup.\nServed chilled with ice cream.\nRefreshing and filling.",
+        "price": "₹130",
+        "time": "15-20 min",
+        "rating": "⭐ 4.6"
+      },
+      {"id": "dessert1",
       "image": "Items/dessert/1.avif",
-      "title": "Gulab Jamun",
-      "restaurant": "Haldiram's",
+      "title": "Chocolate cake",
+      "restaurant": "Kabhibi",
       "desc": "Soft fried dumplings in syrup.\nRich and sweet flavor.\nServed warm for best taste.\nClassic Indian dessert.",
       "price": "₹80",
       "time": "10-15 min",
@@ -478,7 +498,7 @@
     {
       "id": "dessert2",
       "image": "Items/dessert/2.avif",
-      "title": "Rasgulla",
+      "title": "Chocolate Brownie Pastry",
       "restaurant": "Haldiram's",
       "desc": "Spongy balls soaked in syrup.\nLight and juicy texture.\nRefreshing sweet taste.\nTraditional Bengali dessert.",
       "price": "₹90",
@@ -488,7 +508,7 @@
     {
       "id": "dessert3",
       "image": "Items/dessert/3.avif",
-      "title": "Chocolate Brownie",
+      "title": "Red valvet cupcake",
       "restaurant": "Cafe Coffee Day",
       "desc": "Rich chocolate baked dessert.\nSoft and gooey inside.\nServed warm and fresh.\nPerfect for chocolate lovers.",
       "price": "₹120",
@@ -498,7 +518,7 @@
     {
       "id": "dessert4",
       "image": "Items/dessert/4.avif",
-      "title": "Ice Cream Sundae",
+      "title": "Grape cupcake",
       "restaurant": "Baskin Robbins",
       "desc": "Ice cream topped with syrup.\nLoaded with nuts and toppings.\nCold and refreshing dessert.\nLoved by all ages.",
       "price": "₹150",
@@ -508,7 +528,7 @@
     {
       "id": "dessert5",
       "image": "Items/dessert/5.avif",
-      "title": "Kaju Katli",
+      "title": "Croissant",
       "restaurant": "Haldiram's",
       "desc": "Premium cashew sweet.\nRich and smooth texture.\nMelt-in-mouth experience.\nFestive favorite.",
       "price": "₹200",
@@ -518,8 +538,8 @@
     {
       "id": "dessert6",
       "image": "Items/dessert/6.avif",
-      "title": "Rasmalai",
-      "restaurant": "Haldiram's",
+      "title": "Chocolate Lava Cake",
+      "restaurant": "Kabhibi",
       "desc": "Soft paneer discs in milk.\nSweet and creamy taste.\nFlavored with saffron.\nRich dessert option.",
       "price": "₹140",
       "time": "10-15 min",
@@ -528,32 +548,12 @@
     {
       "id": "dessert7",
       "image": "Items/dessert/7.avif",
-      "title": "Chocolate Lava Cake",
+      "title": "Hot cross bun",
       "restaurant": "Domino's",
       "desc": "Warm cake with chocolate filling.\nMolten center texture.\nRich and indulgent taste.\nPerfect dessert treat.",
       "price": "₹160",
       "time": "15-20 min",
       "rating": "⭐ 4.7"
-    },
-    {
-      "id": "dessert8",
-      "image": "Items/dessert/8.avif",
-      "title": "Kulfi",
-      "restaurant": "Naturals",
-      "desc": "Traditional frozen dessert.\nDense and creamy texture.\nRich Indian flavors.\nPerfect summer treat.",
-      "price": "₹100",
-      "time": "10-15 min",
-      "rating": "⭐ 4.5"
-    },
-    {
-      "id": "dessert9",
-      "image": "Items/dessert/9.avif",
-      "title": "Falooda",
-      "restaurant": "Baskin Robbins",
-      "desc": "Sweet dessert drink.\nContains vermicelli and syrup.\nServed chilled with ice cream.\nRefreshing and filling.",
-      "price": "₹130",
-      "time": "15-20 min",
-      "rating": "⭐ 4.6"
     }
   ],
 
