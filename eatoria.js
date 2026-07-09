@@ -178,7 +178,7 @@ document.addEventListener("click", function(e){
 
 async function loadProducts() {
     console.log("Current URL:", window.location.href);
-       const response = await fetch('/items.json');
+       const response = await fetch('../items.json');
        const data = await response.json();
 
        const category = document.body.getAttribute("data-category");
